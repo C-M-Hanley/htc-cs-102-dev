@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,11 @@ namespace MovieList
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Movie> Movies = new List<Movie>();
+        ObservableCollection<Movie> Movies = new ObservableCollection<Movie>();
         public MainWindow()
         {
             InitializeComponent();
+            lvMovies.ItemsSource = Movies;
         }
 
         private void ShowButton_Click(object sender, RoutedEventArgs e)
@@ -38,14 +40,37 @@ namespace MovieList
         {
             string title = titleInput.Text;
             string director = directorInput.Text;
-            int releaseYear = Convert.ToInt32(releaseYearInput.Text);
-            int length = Convert.ToInt32(lengthInput.Text);
+
+            DateTime releaseDate = DateTime.Now;
+            if (Date.SelectedDate != null)
+            {
+                releaseDate = Date.SelectedDate.Value;
+            }
+
+            int length = 0;
+            if(lengthInput.Text.Length > 0)
+            {
+                length = Convert.ToInt32(lengthInput.Text);
+            }
             string genre = genreInput.Text;
 
+            int rotten = 0;
+            if (rottenInput.Text.Length > 0)
+            {
+                rotten = Convert.ToInt32(rottenInput.Text);
+            }
 
-            Movie movie = new Movie(title, releaseYear, director, length, genre);
+
+            Movie movie = new Movie(title, releaseDate, director, length, genre, rotten);
             Movies.Add(movie);
             MessageBox.Show("Movie was added");
+        }
+
+        private void lvMovies_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            Movie selectedMovie = lvMovies.SelectedItem as Movie;
+            if (selectedMovie != null)
+            selectedMovie.ShowDetails();
         }
     }
 }

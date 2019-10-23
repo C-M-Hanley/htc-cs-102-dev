@@ -5,26 +5,60 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MovieList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="700" Width="900">
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="30"/>
+
+
+        </Style>
+
+
+    </Window.Resources>
+
+
     <Grid>
-        <StackPanel Margin="0,10,20,10" Orientation="Vertical">
-            <TextBlock>Title</TextBlock>
-            <TextBox Name="titleInput" Margin="0,0,0,15"></TextBox>
-            <TextBlock>Release Year</TextBlock>
-            <TextBox Name="releaseYearInput" Margin="0,0,0,15">
+        
+       
+        
+        <StackPanel Margin="10,12,10,8" Orientation="Vertical">
+            <ListView Name="lvMovies" Height="150" Margin="0,0,0,15" MouseDoubleClick="lvMovies_MouseDoubleClick">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="150" Header="Title" DisplayMemberBinding="{Binding Title}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Release" DisplayMemberBinding="{Binding ReleaseDate}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Director" DisplayMemberBinding="{Binding Director}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Length" DisplayMemberBinding="{Binding Length}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Genre" DisplayMemberBinding="{Binding Genre}"></GridViewColumn>
+                        <GridViewColumn Width="150" Header="Rotten" DisplayMemberBinding="{Binding Rotten}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <TextBlock Background="Aquamarine" Foreground="AliceBlue">Title</TextBlock>
+            <TextBox Background="Beige" Foreground="RoyalBlue" Name="titleInput" Margin="0,0,0,15"></TextBox>
+            <TextBlock Background="Aquamarine" Foreground="AliceBlue">Release Year</TextBlock>
+            <!--<TextBox Name="releaseYearInput" Margin="0,0,0,15" Background="Beige" Foreground="RoyalBlue">
+            </TextBox>-->
+            <DatePicker Name="Date"></DatePicker>
+
+            <TextBlock Background="Aquamarine" Foreground="AliceBlue">Director</TextBlock>
+            <TextBox Name="directorInput" Margin="0,0,0,15" Background="Beige" Foreground="RoyalBlue"></TextBox>
+            <TextBlock Background="Aquamarine" Foreground="AliceBlue">Length</TextBlock>
+            <TextBox Name="lengthInput" Margin="0,0,0,15" Background="Beige" Foreground="RoyalBlue">
+            </TextBox>
+            <TextBlock Background="Aquamarine" Foreground="AliceBlue">Genre</TextBlock>
+            <TextBox Name="genreInput" Margin="0,0,0,15" Background="Beige" Foreground="RoyalBlue">
             </TextBox>
 
-            <TextBlock>Director</TextBlock>
-            <TextBox Name="directorInput" Margin="0,0,0,15"></TextBox>
-            <TextBlock>Length</TextBlock>
-            <TextBox Name="lengthInput" Margin="0,0,0,15">
-            </TextBox>
-            <TextBlock>Genre</TextBlock>
-            <TextBox Name="genreInput" Margin="0,0,0,15">
+            <TextBlock Background="Aquamarine" Foreground="AliceBlue">Rotten Tomatoes Score</TextBlock>
+            <TextBox Name="rottenInput" Margin="0,0,0,15" Background="Beige" Foreground="RoyalBlue">
             </TextBox>
 
-            <Button Margin="0,0,0,10" HorizontalAlignment="Center" Click="AddButton_Click">Add</Button>
-            <Button Margin="0,0,0,10" HorizontalAlignment="Center" Click="ShowButton_Click">Show All Moveis</Button>
+
+            <Button Margin="0,0,0,10" HorizontalAlignment="Center" Click="AddButton_Click" Background="Beige" Foreground="RoyalBlue">Add</Button>
+            <Button Margin="0,0,0,10" HorizontalAlignment="Center" Click="ShowButton_Click" Background="Beige" Foreground="RoyalBlue">Show All Moveis</Button>
 
            
 
