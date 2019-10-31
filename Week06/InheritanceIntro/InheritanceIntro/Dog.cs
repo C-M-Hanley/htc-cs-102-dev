@@ -9,7 +9,7 @@ namespace InheritanceIntro
 {
     public class Dog : Animal
     {
-        public string Breed;
+        public string Breed; 
 
         public void Bark()
         {
