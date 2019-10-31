@@ -55,6 +55,9 @@ namespace InheritanceIntro
 
             Frog frog1 = new InheritanceIntro.Frog(3, "Timmy");
             frog1.SayName();
+
+            Lion lion1 = new InheritanceIntro.Lion(26, "bob");
+            lion1.SayName();
         }
 
 
@@ -72,6 +75,12 @@ namespace InheritanceIntro
         {
             Frog frog1 = new InheritanceIntro.Frog(3, "timmy");
             frog1.Ribbit();
+        }
+
+        private void Roar_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Lion lion1 = new InheritanceIntro.Lion(26, "bob");
+            lion1.Roar();
         }
     }
 }

@@ -12,5 +12,7 @@
         <Button Click="SayName_Button_Click">Say Name</Button>
         <Button Name="Quack_Button" Click="Quack_Button_Click">Quack</Button>
         <Button Name="Ribbit_Button" Click="Ribbit_Button_Click">Ribbit</Button>
+        <Button Name="Roar_Button" Click="Roar_Button_Click">Roar</Button>
+        
     </StackPanel>
 </Window>

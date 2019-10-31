@@ -7,19 +7,26 @@ using System.Windows;
 
 namespace InheritanceIntro
 {
-    public class Frog : Animal
+    public class Lion : Animal
     {
-        public Frog() { }
 
-        public Frog(int height, string name)
+
+        public Lion() { }
+
+        public Lion(int height, string name)
         {
             this.Height = height;
             this.Name = name;
+
         }
 
-        public void Ribbit()
+        public void Roar()
         {
-            MessageBox.Show("Ribbit");
+            MessageBox.Show("Roar");
         }
+
+
+
     }
 }
+

@@ -67,6 +67,7 @@
     <Compile Include="Class2.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Frog.cs" />
+    <Compile Include="Lion.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
