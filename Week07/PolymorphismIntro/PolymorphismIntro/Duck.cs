@@ -21,5 +21,9 @@ namespace PolymorphismIntro
             this.Height = height;
             this.Name = name;
         }
+        public override void Speak()
+        {
+            MessageBox.Show("Quack");
+        }
     }
 }
