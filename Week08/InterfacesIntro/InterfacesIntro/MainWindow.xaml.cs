@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InterfacesIntro;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -21,41 +22,45 @@ namespace InheritanceIntro
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ObservableCollection<Animal> Animals;
+        public ObservableCollection<ISpeaker> Speakers;
 
         public MainWindow()
         {
             InitializeComponent();
-            Animals = new ObservableCollection<Animal>();
+            Speakers = new ObservableCollection<ISpeaker>();
 
             // Define some animals
-            Frog frog = new Frog(4, "Kermit", false);
-            Dog dog = new Dog("Muppet", 20, "Rolf");
-            Duck duck = new Duck(9, "Donald");
+            Frog frog = new Frog(4, "Kermit", false, 2);
+            Dog dog = new Dog("Muppet", 20, "Rolf", 2166);
+            Duck duck = new Duck(9, "Donald", 1);
 
             // Add the animals to the list
-            Animals.Add(frog);
-            Animals.Add(dog);
-            Animals.Add(duck);
+            Speakers.Add(frog);
+            Speakers.Add(dog);
+            Speakers.Add(duck);
+            
 
-            lvAnimals.ItemsSource = Animals;
+            Robot robot = new Robot("R.O.B.", 2555, 263);
+            Speakers.Add(robot);
+
+            lvSpeakers.ItemsSource = Speakers;
         }
 
-        private void lvAnimals_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private void lvSpeakers_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Animal selectedAnimal = lvAnimals.SelectedItem as Animal;
-            if (selectedAnimal != null)
+            ISpeaker selectedSpeaker = lvSpeakers.SelectedItem as ISpeaker;
+            if (selectedSpeaker != null)
             {
-                selectedAnimal.Speak();
+                selectedSpeaker.Speak();
             }
         }
 
         private void SayName_Button_Click(object sender, RoutedEventArgs e)
         {
             // Loop through the list and call a method on the objects
-            foreach (Animal a in Animals)
+            foreach (ISpeaker s in Speakers)
             {
-                a.SayName();
+                s.SayName();
             }
         }
     }

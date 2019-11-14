@@ -18,11 +18,12 @@ namespace InheritanceIntro
 
         public Frog() { }
 
-        public Frog(int height, string name, bool isPoisonous)
+        public Frog(int height, string name, bool isPoisonous, int weight)
         {
             this.Height = height;
             this.Name = name;
             this.IsPoisonous = isPoisonous;
+            this.Weight = weight;
         }
     }
 }

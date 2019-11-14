@@ -14,6 +14,13 @@ namespace PolymorphismIntro
             get;
             set;
         }
+
+        public int Weight
+        {
+            get;
+            set;
+        }
+
         public string Name
         {
             get;

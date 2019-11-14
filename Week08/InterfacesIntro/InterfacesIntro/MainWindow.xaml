@@ -7,11 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="700">
     <StackPanel>
-        <ListView Name="lvAnimals" Height="150px" Margin="0,0,0,10" MouseDoubleClick="lvAnimals_MouseDoubleClick">
+        <ListView Name="lvSpeakers" Height="150px" Margin="0,0,0,10" MouseDoubleClick="lvSpeakers_MouseDoubleClick">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Width="150" Header="Name" DisplayMemberBinding="{Binding Name}"></GridViewColumn>
                     <GridViewColumn Width="100" Header="Height" DisplayMemberBinding="{Binding Height}"></GridViewColumn>
+                    <GridViewColumn Width="100" Header="Weight" DisplayMemberBinding="{Binding Weight}"></GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -18,11 +18,12 @@ namespace PolymorphismIntro
 
         public Frog() { }
 
-        public Frog(int height, string name, bool isPoisonous)
+        public Frog(int height, string name, bool isPoisonous, int weight)
         {
             this.IsPoisonous = isPoisonous;
             this.Height = height;
             this.Name = name;
+            this.Weight = weight;
         }
         public override void Speak()
         {

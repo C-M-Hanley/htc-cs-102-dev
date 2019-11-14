@@ -20,6 +20,10 @@
                                         DisplayMemberBinding="{Binding Height}">
                             
                         </GridViewColumn>
+                        <GridViewColumn Width="100" Header="Weight" 
+                                        DisplayMemberBinding="{Binding Weight}">
+
+                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
