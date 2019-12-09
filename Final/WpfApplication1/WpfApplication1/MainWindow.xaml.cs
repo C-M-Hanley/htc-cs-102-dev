@@ -32,8 +32,15 @@ namespace WpfApplication1
             curve = new Curve("mkl");
         }
 
+
+        private int i = 0;
+
+        
         private void Hard_Button_Click(object sender, RoutedEventArgs e)
         {
+            i++;
+
+            txtBox1.Text = i.ToString();
             hard.YouWin();
             BCapture.IsEnabled = false;
             if (BCapture.IsEnabled == false)

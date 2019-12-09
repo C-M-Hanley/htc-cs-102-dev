@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+
+        <TextBox Name="txtBox1"></TextBox>
         <StackPanel>
-            <Image Source="putt.jpg" Width="200"/>
+            <Image Source="putt.jpg" Width="250"/>
             <Button Click="Hard_Button_Click" Content="Hard Hit" Name="BCapture" IsEnabled="True"/>
             <Button Click="Curve_Button_Click" Content="Curve Hit" Name="CCapture"></Button>
             <Button Click="Gentle_Button_Click"  Name="DCapture">Gentle Hit</Button>
