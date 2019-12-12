@@ -25,7 +25,7 @@ namespace WpfApplication1
         public virtual void YouWin()
         
         {
-            MessageBox.Show("You Win!");
+            MessageBox.Show("You did it!");
         }
 
         public virtual void Tryagain()

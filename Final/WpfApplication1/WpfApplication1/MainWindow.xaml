@@ -7,14 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="411*"/>
+        </Grid.ColumnDefinitions>
 
-        <TextBox Name="txtBox1"></TextBox>
-        <StackPanel>
-            <Image Source="putt.jpg" Width="250"/>
+        <TextBox Name="txtBox1" Margin="48,10,406,281" RenderTransformOrigin="2.583,3.05" Grid.ColumnSpan="2"></TextBox>
+        <TextBlock Text="Score:" Margin="10,10,63,281" FontSize="12"></TextBlock>
+        <StackPanel Grid.ColumnSpan="2" Margin="0,10,0,-10">
+            <Image Source="putt.jpg" Width="250"/> 
+            <Button Click="Gentle_Button_Click" Content="Gentle Hit"  Name="DCapture"></Button>
             <Button Click="Hard_Button_Click" Content="Hard Hit" Name="BCapture" IsEnabled="True"/>
             <Button Click="Curve_Button_Click" Content="Curve Hit" Name="CCapture"></Button>
-            <Button Click="Gentle_Button_Click"  Name="DCapture">Gentle Hit</Button>
+            <Button Click="Spiral_Button_Click" Content="Spiral Hit" Name="ECapture"></Button>
+            <Button Click="Rocket_Button_Click" Content="Rocket Hit" Name="FCapture"></Button>
         </StackPanel>
     </Grid>
-    
+
 </Window>
